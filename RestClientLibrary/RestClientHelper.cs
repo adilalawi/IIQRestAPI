@@ -65,6 +65,7 @@ namespace RestClientLibrary
             return response;
         }
 
+        // Log to iiq
         public HttpStatusCode Login()
         {
             string path = string.Format("ping");
@@ -75,6 +76,7 @@ namespace RestClientLibrary
             return response.StatusCode;
         }
 
+        // Get the iiq configuration
         public void GetConfig()
         {
             string path = string.Format("configuration?attributeName=certificationEmailTemplate");
@@ -85,7 +87,9 @@ namespace RestClientLibrary
             var content = response.Content;
         }
 
-        public void GetIdentity (String identityID){
+        // Get the identity info
+        public void GetIdentity(String identityID)
+        {
             string path = string.Format("identities/{0}", identityID);
             var request = Request(path, Method.GET);
             request.AddHeader("ContentType", "application/json");
@@ -95,6 +99,7 @@ namespace RestClientLibrary
             var des = deserializer.Deserialize<IdentityContainer>(response);
         }
 
+        // Get the assigned account to a specified identity
         public void GetIdentityLinks(string identityID)
         {
             string path = string.Format("identities/{0}/links/?includeLinkState=true", identityID);
@@ -104,10 +109,11 @@ namespace RestClientLibrary
             var response = Response(request);
             var content = response.Content;
             var des = deserializer.Deserialize<LinksContainer>(response);
-   
+
 
         }
 
+        // Create a new identity
         public void CreateIdentity(Identity identity)
         {
             string path = string.Format("identities");
@@ -144,3 +150,4 @@ namespace RestClientLibrary
         }
     }
 }
+
