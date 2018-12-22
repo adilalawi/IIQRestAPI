@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="HttpVerb.cs" />
     <Compile Include="Identity.cs" />
     <Compile Include="IdentityContainer.cs" />
     <Compile Include="LinksContainer.cs" />
