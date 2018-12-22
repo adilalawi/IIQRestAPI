@@ -113,8 +113,10 @@ namespace RestClientLibrary
 
         }
 
+
         // Create a new identity or Update it
         public void CreateUpdateIdentity(Identity identity, HttpVerb method)
+
         {
             int methodNumber = (int)method;
 
