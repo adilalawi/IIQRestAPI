@@ -25,12 +25,14 @@ namespace IIQRestAPI
             // Get Identity links
             restClient.GetIdentityLinks("1");
             // Create Identity
-            Identity identity = new Identity();
-            identity.firstname = "adli";
-            identity.lastname = "adli";
-            identity.name = "adli adli";
-            identity.displayName = "adli Khab";
-            identity.email = "adli@la.de";
+            Identity identity = new Identity
+            {
+                firstname = "adli",
+                lastname = "adli",
+                name = "adli adli",
+                displayName = "adli Khab",
+                email = "adli@la.de"
+            };
 
             restClient.CreateUpdateIdentity(identity, HttpVerb.POST);
 
